@@ -1,21 +1,21 @@
 server:
-  bind_address: "0.0.0.0"  # Разрешаем доступ не только с localhost
+  bind_address: "0.0.0.0"  # доступ не только с localhost
   port: 8888
-  secret_key: "stormyrougeforever104104"  # Замени на свой случайный ключ
+  secret_key: "stormyrougeforever104104"
   base_url: false
-  limiter: false  # Отключаем ограничения запросов для локального использования
+  limiter: false  # ограничения запросов для локального использования
   image_proxy: false
-  method: "GET"  # Упрощаем запросы для бота
+  method: "GET"
   http_protocol_version: "1.1"
 
 search:
-  safe_search: 0  # Отключаем фильтрацию контента
+  safe_search: 0  # фильтрация контента
   autocomplete: ""
   default_lang: "en"
   formats:
     - html
-    - json  # Обязательно включаем JSON
-  ban_time_on_fail: 0  # Отключаем блокировку движков
+    - json
+  ban_time_on_fail: 0
 
 outgoing:
   request_timeout: 10.0
@@ -48,6 +48,6 @@ categories:
 
 plugins:
   - searx.plugins.ahmia_filter.SXNGPlugin:
-      active: false  # Отключаем Tor-фильтры
+      active: false  # Tor-фильтры
   - searx.plugins.tracker_url_remover.SXNGPlugin:
-      active: false  # Отключаем очистку URL
+      active: false  # очистка URL
