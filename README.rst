@@ -1,5 +1,7 @@
 .. SPDX-License-Identifier: AGPL-3.0-or-later
 
+# JUST A CUSTOM CONFIG FOR ME & MY DISCORD BOT, NOT AN ORIGINAL VERSION OF SEARXNG
+
 ----
 
 .. figure:: https://raw.githubusercontent.com/searxng/searxng/master/client/simple/src/brand/searxng.svg
