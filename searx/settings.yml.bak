@@ -1,0 +1,53 @@
+server:
+  bind_address: "0.0.0.0"  # Разрешаем доступ не только с localhost
+  port: 8888
+  secret_key: "stormyrougeforever104104"  # Замени на свой случайный ключ
+  base_url: false
+  limiter: false  # Отключаем ограничения запросов для локального использования
+  image_proxy: false
+  method: "GET"  # Упрощаем запросы для бота
+  http_protocol_version: "1.1"
+
+search:
+  safe_search: 0  # Отключаем фильтрацию контента
+  autocomplete: ""
+  default_lang: "en"
+  formats:
+    - html
+    - json  # Обязательно включаем JSON
+  ban_time_on_fail: 0  # Отключаем блокировку движков
+
+outgoing:
+  request_timeout: 10.0
+  enable_http2: true
+  useragent_suffix: "DiscordBot/1.0"
+
+engines:
+  - name: google
+    engine: google
+    shortcut: go
+    enable_http: true
+    weight: 1.0
+    categories: general
+
+  - name: google_images
+    engine: google_images
+    shortcut: goi
+    categories: images
+
+ui:
+  default_theme: simple
+  results_on_new_tab: false
+  infinite_scroll: false
+
+categories:
+  general:
+    - google
+  images:
+    - google_images
+
+plugins:
+  - searx.plugins.ahmia_filter.SXNGPlugin:
+      active: false  # Отключаем Tor-фильтры
+  - searx.plugins.tracker_url_remover.SXNGPlugin:
+      active: false  # Отключаем очистку URL
